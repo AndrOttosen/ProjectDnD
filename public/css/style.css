@@ -1,0 +1,36 @@
+.fpMain{
+  	padding-top: 7%;
+  }
+
+.btnPadding{
+	margin-top:5%;
+}
+
+.btnSpacing{
+	margin-right:5px;
+}
+
+/*Header CSS*/
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+.navbar-header {
+    float:none;
+}
+
+.navDesign {
+    margin-top: 10%;
+    background-color: lightblue;
+    border-color: #e7e7e7;
+}
+
+.navbar-default {
+    background-color: white;
+    border-color: white;
+}

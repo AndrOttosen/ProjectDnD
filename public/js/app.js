@@ -23,5 +23,10 @@
   	url: '/login',
   	templateUrl: 'views/login.html'
 
+  })
+
+  .state('profile', {
+    url: '/profile',
+    templateUrl: 'views/profile.html'
   });
 })
