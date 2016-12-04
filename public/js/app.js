@@ -25,6 +25,11 @@
 
   })
 
+  .state('campaign', {
+    url: '/campaign',
+    templateUrl: 'views/campaign.html'
+  })
+
   .state('profile', {
     url: '/profile',
     templateUrl: 'views/profile.html'
