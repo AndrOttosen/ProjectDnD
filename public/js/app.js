@@ -28,5 +28,10 @@
   .state('profile', {
     url: '/profile',
     templateUrl: 'views/profile.html'
+  })
+
+  .state ('creatercharacter', {
+    url: '/createcharacter',
+    templateUrl: 'views/createcharacter.html'
   });
 })
