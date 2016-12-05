@@ -19,6 +19,15 @@
     templateUrl: 'views/frontpage.html'
   })
 
+    .state('newCampaign', {
+    url: '/campaign-1',
+    templateUrl: 'views/newCampaign.html'
+  })
+    .state('pastCampaigns', {
+    url: '/campaign-3',
+    templateUrl: 'views/pastCampaigns.html'
+  })
+
   .state('login', {
   	url: '/login',
   	templateUrl: 'views/login.html'
@@ -33,6 +42,11 @@
   .state('profile', {
     url: '/profile',
     templateUrl: 'views/profile.html'
+  })
+
+  .state('currentCampaign', {
+    url: '/campaign-2',
+    templateUrl: 'views/currentCampaign.html'
   })
 
   .state ('creatercharacter', {
