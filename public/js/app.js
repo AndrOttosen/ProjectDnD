@@ -23,6 +23,11 @@
     url: '/campaign-1',
     templateUrl: 'views/newCampaign.html'
   })
+   .state('register', {
+    url: '/register',
+    templateUrl: 'views/register.html'
+  })
+
     .state('pastCampaigns', {
     url: '/campaign-3',
     templateUrl: 'views/pastCampaigns.html'
