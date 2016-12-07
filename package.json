@@ -4,6 +4,7 @@
   "description": "Basic node server with express REST api",
   "main": "server.js",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.2",
     "bootstrap": "^3.3.7",
     "cookie-parser": "^1.4.3",
@@ -12,6 +13,9 @@
     "logger": "^0.0.1",
     "mongodb": "^2.2.5",
     "mongoose": "^4.5.8",
+    "passport": "^0.3.2",
+    "passport-http": "*",
+    "passport-local": "^1.0.0",
     "path": "^0.12.7"
   },
   "devDependencies": {

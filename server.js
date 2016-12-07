@@ -1,31 +1,35 @@
-//Base server setup for REST API 
-var express = require('express');
-var bodyParser = require('body-parser'); 
+// Base Setup for the server - NODE.JS plugins
+var express      = require('express');
+var bodyParser   = require('body-parser');
 var cookieParser = require('cookie-parser');
-var path = require('path');
-var session = require('express-session');
-var logger = require('morgan');
-
-//Server setup
-var mongoose = require('mongoose');
-var mongodb = require('mongodb');
-
-//Initial app setup, express and port
-var app = express();
-var port = 3003; 
-
-//Connectionstring to our MongoDB - Change connectionstring to live URL, when ready for production
+var path         = require('path');
+var session      = require('express-session');
+var passport     = require('passport');
+var logger       = require('morgan');
+ 
+//MongoDB
+var mongoose     = require('mongoose');
+var mongodb      = require('mongodb');
+ 
+//App
+var app          = express();
+var port         = 3003;
+ 
+ 
+//Connect til mongooseDB
 mongoose.connect('mongodb://localhost/');
+ 
+//MODELS - Schemas.
+var User = require('./models/users');
 
-//Models - Schemas for REST-API(Express)
-var User = require('./Models/users.js');
-
-//REST URLS aka. Routes
+ 
+//ROUTES
 var router = express.Router();
-
-
-//App middleware - enable logger, session, body and cookie-parser
-
+var loginmanager = require('./Routes/loginmanager.js')(passport);
+require('./Routes/users.js')(router, mongoose, User);
+require('./Routes/loginmanager.js')(passport);
+ 
+ 
 app.use(logger('dev'));
 app.use(session({
   secret: 'keyboard cat',
@@ -36,23 +40,34 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-
-//Use a API tester, EG Postman - make a get request to localhost:3003/ to get a response
+app.use(passport.initialize());
+app.use(passport.session());
+ 
+app.use('/auth', loginmanager);
+app.use('/api', router);
+ 
+ 
+ 
+//// Initialize Passport
+var initPassport = require('./passport-init');
+initPassport(passport);
+ 
+ 
+//Test om der er forbindelse til API
 router.get('/', function(req, res) {
-	res.json({ message: 'Hello, our API is running'});
+    res.json({ message: 'Apiet virker, der er hul igennem du'});
 });
-
-
-//A message to our console whenever you manipulate with data in the API
+ 
+ 
+//Besked til console når der oprettes/slettes i DB
 router.use(function(res, req, next) {
-	console.log('You have manipulated with some data!')
-	next();
+    console.log('Der sker noget her!')
+    next();
 });
-
-
-//Consolmessage when we start our server
+ 
+ 
+//Consol besked ved start af server
 app.listen(port);
-console.log('We are live and hot on port ' + port);
-
-module.exports = app; 
+console.log('We are live on port ' + port);
+ 
+module.exports = app;
