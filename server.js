@@ -1,6 +1,6 @@
 //Base server setup for REST API 
 var express = require('express');
-var bodyParser = require('body-parser');
+var bodyParser = require('body-parser'); 
 var cookieParser = require('cookie-parser');
 var path = require('path');
 var session = require('express-session');
@@ -18,6 +18,7 @@ var port = 3003;
 mongoose.connect('mongodb://localhost/');
 
 //Models - Schemas for REST-API(Express)
+var User = require('./Models/users.js');
 
 //REST URLS aka. Routes
 var router = express.Router();
