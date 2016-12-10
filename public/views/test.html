@@ -1,0 +1,14 @@
+<div class="container">
+	<div class="row">
+		<div ng-controller="campaignCtrl">
+			<div ng-repeat="campaigncontent in campaigndata"> 
+			<div class="col-md-6">
+				<h1 class="text-center"> Testeren </h1>
+				<textarea ng-model="campaigncontent.name" class="form-control" rows="6"></textarea>
+				<button class="btn btn-default text-center btnPadding pull-right" ng-click="campaignTest()"> Save </button>
+			</div>
+			</div>	
+		</div>
+	</div>
+</div>
+

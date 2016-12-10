@@ -4,8 +4,8 @@
 
  angular.module('angular', [
   'ui.router',
-  'userModule'
-
+  'userModule',
+  'campaignData'
 ])
 
 .config(function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $locationProvider) {
@@ -58,5 +58,10 @@
   .state ('creatercharacter', {
     url: '/createcharacter',
     templateUrl: 'views/createcharacter.html'
-  });
+  })
+
+  .state ('test', {
+    url: '/test',
+    templateUrl: 'views/test.html'
+  }); 
 })
