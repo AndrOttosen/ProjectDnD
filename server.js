@@ -24,7 +24,9 @@ var User = require('./Models/users'); //require schema for users.
  
 //REST URLS aka. Routes
 var router = express.Router(); // 
- 
+var userauths = require('./routes/userauths.js')(passport);
+var users = require('./routes/users.js')(passport);
+
 //App middleware - enable logger, session, body and cookie-parser
 app.use(logger('dev')); // Developement mode. Andre modes er production til live-produkter.
 app.use(session({ // session værdi.
@@ -38,6 +40,8 @@ app.use(cookieParser()); // req cookieParser.
 app.use(express.static(path.join(__dirname, 'public'))); //static path op for html/css/js.
 app.use(passport.initialize()); // req passport.
 app.use(passport.session()); // req passport.session. 
+
+app.use('/', userauths);
  
 //Use a API tester, EG Postman - make a get request to localhost:3003/ to get a response
 app.get('/', function (req, res) { // Test af get funktion for at se om hul igennem. (req/res funktion)

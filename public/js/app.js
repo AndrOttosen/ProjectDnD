@@ -3,7 +3,8 @@
  /* App Module */
 
  angular.module('angular', [
-  'ui.router'
+  'ui.router',
+  'userModule'
 
 ])
 
