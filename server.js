@@ -21,10 +21,12 @@ mongoose.connect('mongodb://localhost/'); // localhost
  
 //Models - Schemas for REST-API(Express)
 var User = require('./Models/users'); //require schema for users.
+var campaignModel = require ('./Models/campaigns');
  
 //REST URLS aka. Routes
 var router = express.Router(); // 
 var userauths = require('./routes/userauths.js')(passport);
+var campaignpost = require('./routes/campaigns.js');
 var users = require('./routes/users.js')(passport);
 
 //App middleware - enable logger, session, body and cookie-parser
@@ -42,6 +44,7 @@ app.use(passport.initialize()); // req passport.
 app.use(passport.session()); // req passport.session. 
 
 app.use('/', userauths);
+app.use('/api', campaignpost);
  
 //Use a API tester, EG Postman - make a get request to localhost:3003/ to get a response
 app.get('/', function (req, res) { // Test af get funktion for at se om hul igennem. (req/res funktion)

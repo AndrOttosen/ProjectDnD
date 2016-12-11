@@ -31,6 +31,8 @@ module.exports = function(passport){
         res.redirect('/#/frontpage');
     });
 
+    
+
     return router;
 
 }
