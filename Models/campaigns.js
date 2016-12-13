@@ -3,7 +3,10 @@ var Schema = mongoose.Schema;
 
 
 var campaignSchema = new Schema({
-    campaignName: String
+    campaign: String,
+   
+    created_at: {type: Date, default: Date.now}
+
     
 });
 

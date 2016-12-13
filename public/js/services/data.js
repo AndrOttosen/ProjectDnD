@@ -5,4 +5,11 @@ angular.module('userCampaign')
   this.getCampaigns = function(cb) {
     $http.get('/mock/campaignText.json').then(cb);
 };
-  });
+
+  this.saveCampaign = function(campaignData) {
+    console.log("I saved " + campaign.length + " d!");
+  };
+
+});
+
+

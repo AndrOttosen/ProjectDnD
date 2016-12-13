@@ -29,6 +29,9 @@ var userauths = require('./routes/userauths.js')(passport);
 var campaignpost = require('./routes/campaigns.js');
 var users = require('./routes/users.js')(passport);
 
+//tesetmanner
+var usercampaign = require('./src/api/usercampaign.js');
+
 //App middleware - enable logger, session, body and cookie-parser
 app.use(logger('dev')); // Developement mode. Andre modes er production til live-produkter.
 app.use(session({ // session værdi.
@@ -36,6 +39,7 @@ app.use(session({ // session værdi.
   resave: 'true',
   saveUninitialized: 'true'
 }));
+
 app.use(bodyParser.json()); //req body-parser.
 app.use(bodyParser.urlencoded({ extended: false })); //sætter urlencoded op til true/false.
 app.use(cookieParser()); // req cookieParser.
@@ -116,6 +120,17 @@ app.delete('/user/:user_id', function (req, res) { // Delete funktion ud fra ID.
     res.json({ message: 'Bruger slettet' });
   });
 });
+
+// app.delete('/campaign/:campaign_id', function (req, res) { // Delete funktion ud fra ID.
+//   campaignData.remove({
+//     _id: req.params.campaign_id
+//   }, function (err, campaign) {
+//     if (err) {
+//       res.send(err);
+//     }
+//     res.json({ message: 'Bruger slettet' });
+//   });
+// });
 
 
 // SUCCESS VERSION AF APP.GET TIL CAMPAIGNS
