@@ -21,7 +21,7 @@ mongoose.connect('mongodb://localhost/'); // localhost
  
 //Models - Schemas for REST-API(Express)
 var User = require('./Models/users'); //require schema for users.
-var campaignModel = require ('./Models/campaigns');
+var campaignData = require ('./Models/campaigns');
  
 //REST URLS aka. Routes
 var router = express.Router(); // 
@@ -116,6 +116,22 @@ app.delete('/user/:user_id', function (req, res) { // Delete funktion ud fra ID.
     res.json({ message: 'Bruger slettet' });
   });
 });
+
+
+// SUCCESS VERSION AF APP.GET TIL CAMPAIGNS
+// app.get('/campaigns', function (req, res) { // Get funktion af ALLE medlemmer.
+// var campaign = new campaignData();  
+// campaign.campaignName = req.body.campaign;
+
+//   campaignData.find(function (err, campaign) {
+//     if (err) {
+//       res.send(err);
+//     }
+//     res.json(campaign);
+
+//     console.log(campaignData);
+//   });
+// });
  
 //Consolmessage when we start our server 
 // we are live and hot.

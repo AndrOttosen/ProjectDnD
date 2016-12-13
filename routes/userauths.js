@@ -30,7 +30,6 @@ module.exports = function(passport){
         req.logout();
         res.redirect('/#/frontpage');
     });
-
     
 
     return router;

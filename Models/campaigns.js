@@ -7,7 +7,7 @@ var campaignSchema = new Schema({
     
 });
 
-module.exports = mongoose.model('campaigns', campaignSchema);
+module.exports = mongoose.model('campaignData', campaignSchema);
 
 
 

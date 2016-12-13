@@ -15,20 +15,20 @@ var router = express.Router();
 //   });
 // });
 
-router.get('/campaigns', function (req, res) { // Get funktion af ALLE medlemmer.
-var campaign = new Campaign();	
+router.post('/test', function (req, res) { // Get funktion af ALLE medlemmer.
+var campaign = new campaignData();	
 campaign.campaignName = req.body.campaign;
 
-  campaign.find(function (err, campaign) {
+  campaignData.save(function (err) {
     if (err) {
       res.send(err);
     }
-    res.json(campaign);
+    res.json({ message: 'Der er oprettet en campaign' });
 
-    console.log(campaign);
+    console.log(campaignData);
+    console.log('data?');
   });
 });
-
 
 module.exports = router;
 
