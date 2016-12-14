@@ -120,17 +120,13 @@ app.delete('/user/:user_id', function (req, res) { // Delete funktion ud fra ID.
     res.json({ message: 'Bruger slettet' });
   });
 });
-
-// app.delete('/campaign/:campaign_id', function (req, res) { // Delete funktion ud fra ID.
-//   campaignData.remove({
-//     _id: req.params.campaign_id
-//   }, function (err, campaign) {
-//     if (err) {
-//       res.send(err);
-//     }
-//     res.json({ message: 'Bruger slettet' });
-//   });
-// });
+ 
+//Consolmessage when we start our server 
+// we are live and hot.
+app.listen(port);
+console.log('We are live and hot on port ' + port);
+ 
+exports = module.exports = app; // Gør App tilgængelig i hele projektet. 
 
 
 // SUCCESS VERSION AF APP.GET TIL CAMPAIGNS
@@ -147,10 +143,3 @@ app.delete('/user/:user_id', function (req, res) { // Delete funktion ud fra ID.
 //     console.log(campaignData);
 //   });
 // });
- 
-//Consolmessage when we start our server 
-// we are live and hot.
-app.listen(port);
-console.log('We are live and hot on port ' + port);
- 
-exports = module.exports = app; // Gør App tilgængelig i hele projektet. 

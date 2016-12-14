@@ -8,10 +8,7 @@ angular.module('userCampaign', [])
 		var campaigns = response.data;
 		$scope.campaigns = campaigns;
 		console.log(response.data)
-	});
-
-	
-	
+	});	
 })
 
 

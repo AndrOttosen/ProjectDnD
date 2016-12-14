@@ -1,28 +1,37 @@
-	<div class="container">
-		<div class="row">
-			<div ng-controller="mainCtrl">
-				<div ng-repeat="campaign in campaigns"> 
-				<div class="col-md-6">
-					<h1 class="text-center"> Testeren </h1>
-					<textarea ng-model="campaign.name" class="form-control" name="campaign" rows="6"></textarea>
-					<button class="btn btn-default text-center btnPadding pull-right"> Save </button>
+		<div class="container">
+			<div class="row">
+				<div ng-controller="mainCtrl">
+
+					<div ng-repeat="campaigns in campaign">
+					<div class="col-md-6">
+						<h1 class="text-center"> Testeren </h1>
+						<textarea ng-model="campaigns.campaign" class="form-control" name="campaign" rows="6"></textarea>
+						<button class="btn btn-default text-center btnPadding pull-right"> Save </button>
+					</div>
+					</div>	
+
+					<div class="form-bottom">
+		                <form action='/api/campaigns', method='POST'>
+		                    <div class="form-group">
+		                       <input type="text" data-type="text" name="campaign" required/>
+		                   </div>
+		                   
+			                <div class="row">
+			                   <input type="submit" value="Register"> 
+			               	</div>
+
+		           		</form>
+			       </div>
+
+
+			       <div class="form-bottom">
+		                <form action='/api/campaigns', method='GET'>
+		                   <div class="form-group">
+		                   	<textarea class="form-control" name="campaign" rows="6"> {{campaigns.campaign}} </textarea> 
+		                   </div>
+		           </form>
+			       </div>
 				</div>
-				</div>	
-
-				<div class="form-bottom">
-	                <form action='/api/campaigns', method='POST'>
-	                    <div class="form-group">
-	                       <label class="sr-only" for="form-campaigns">Enter desired username</label>
-	                       <input type="text" data-type="text" name="campaign"/>
-	                   </div>
-	                   
-	                <div class="row">
-	                   <input type="submit" value="Register"> 
-	               </div>
-
-	           </form>
-		       </div>
 			</div>
 		</div>
-	</div>
 
