@@ -5,7 +5,7 @@
 					<div ng-repeat="campaigns in campaign">
 					<div class="col-md-6">
 						<h1 class="text-center"> Testeren </h1>
-						<textarea ng-model="campaigns.campaign" class="form-control" name="campaign" rows="6"></textarea>
+						<textarea ng-model="campaignText.name" class="form-control" name="campaign" rows="6"></textarea>
 						<button class="btn btn-default text-center btnPadding pull-right"> Save </button>
 					</div>
 					</div>	
@@ -23,13 +23,8 @@
 		           		</form>
 			       </div>
 
-
-			       <div class="form-bottom">
-		                <form action='/api/campaigns', method='GET'>
-		                   <div class="form-group">
-		                   	<textarea class="form-control" name="campaign" rows="6"> {{campaigns.campaign}} </textarea> 
-		                   </div>
-		           </form>
+			       <div ng-repeat="campaign in campaigns">
+			       <button ng-if="campaign.campaign"> {{ campaign.campaign }} </button>
 			       </div>
 				</div>
 			</div>

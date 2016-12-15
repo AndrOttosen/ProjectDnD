@@ -1,20 +1,13 @@
 'use strict'
-var campaignData = require('./../../Models/campaigns');
+// var campaignData = require('./../../Models/campaigns');
 
-
-var campaigns = [
-	'Feed the dog',
-	'Walk the kids',
-	'Water the trees'
-];
-
-campaigns.forEach(function (campaign, index) {
-  campaignData.find({ 'name': campaign }, function(err, campaigns) {
-  	if (!err && !campaigns.length) {
-      campaignData.create({ completed: false, name: campaign });
-  	}
-  });
-});
+// campaigns.forEach(function (campaign, index) {
+//   campaignData.find({ 'name': campaign }, function(err, campaigns) {
+//   	if (!err && !campaigns.length) {
+//       campaignData.create({ completed: false, name: campaign });
+//   	}
+//   });
+// });
 
 
 

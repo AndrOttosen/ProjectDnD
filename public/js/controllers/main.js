@@ -5,7 +5,7 @@ angular.module('userCampaign', [])
 .controller('mainCtrl', function($scope, dataService){
 
 	dataService.getCampaigns(function(response) {
-		var campaigns = response.data;
+		var campaigns = response.data.campaign;
 		$scope.campaigns = campaigns;
 		console.log(response.data)
 	});	

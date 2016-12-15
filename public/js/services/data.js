@@ -6,9 +6,9 @@ angular.module('userCampaign')
     $http.get('/api/campaigns').then(cb);
 };
 
-  this.saveCampaign = function(campaignData) {
-    console.log("I saved " + campaign.length + " d!");
-  };
+  // this.saveCampaign = function(campaignData) {
+  //   console.log("I saved " + campaign.length + " d!");
+  // };
 
 });
 

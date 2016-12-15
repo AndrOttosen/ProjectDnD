@@ -6,7 +6,7 @@ var campaignSchema = new Schema({
     campaign: String   
 });
 
-module.exports = mongoose.model('campaignData', campaignSchema);
+module.exports = mongoose.model('Campaign', campaignSchema);
 
 
 

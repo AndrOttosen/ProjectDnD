@@ -1,10 +1,10 @@
 var mongoose = require('mongoose');
 var express = require('express');
 var router = express.Router();
-var campaignData = require('./../Models/campaigns');
+var Campaign = require('./../Models/campaigns');
 
 router.get('/campaigns', function(req, res) {
-  campaignData.find({}, function(err, campaign) {
+  Campaign.find({}, function(err, campaign) {
     if (err) {
       return res.status(500).json({ message: err.message });
     }
@@ -15,13 +15,13 @@ router.get('/campaigns', function(req, res) {
 
 router.post('/campaigns', function(req, res){
 	var campaigns = req.body;
-	campaignData.create(campaigns, function(err, campaign) {
+	Campaign.create(campaigns, function(err, campaign) {
 		if (err) {
 			return res.status(500).json({err: err.message});
 			console.log(campaigns);
 
 		}
-		res.json({'campaigns': campaigns, message: 'Campaign Created'});
+		res.json(200, campaigns); // {'name': campaigns, message: 'Campaign Created'}
 	})
 	
 });

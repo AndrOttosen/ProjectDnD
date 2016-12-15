@@ -21,7 +21,7 @@ mongoose.connect('mongodb://localhost/'); // localhost
  
 //Models - Schemas for REST-API(Express)
 var User = require('./Models/users'); //require schema for users.
-var campaignData = require ('./Models/campaigns');
+var Campaign = require ('./Models/campaigns');
  
 //REST URLS aka. Routes
 var router = express.Router(); // 
