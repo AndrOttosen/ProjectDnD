@@ -13,6 +13,17 @@ router.get('/campaigns', function(req, res) {
 });
 
 
+router.get('/campaigns/:id', function(req, res){
+        Campaign.findById(req.params.id, function(err, campaign){
+            console.log(req.params.id)
+            if (err){
+                res.send(500, err);
+            }
+            res.json(200, campaign);
+        });
+    });
+
+
 router.post('/campaigns', function(req, res){
 	var campaigns = req.body;
 	Campaign.create(campaigns, function(err, campaign) {
@@ -25,5 +36,22 @@ router.post('/campaigns', function(req, res){
 	})
 	
 });
+
+
+
+
+    router.delete('/campaigns/:id', function (req, res) {     // <===== defined inside 'put',
+        Campaign.remove({_id: req.params.id}, function (err, campaign) {
+            if(err){
+            return res.send(err);
+          } else {
+            res.json({message: 'Successfully deleted'});
+          }
+        });
+    });
+
+
+
+
 
 module.exports = router;

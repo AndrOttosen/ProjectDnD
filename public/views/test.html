@@ -2,18 +2,22 @@
 			<div class="row">
 				<div ng-controller="mainCtrl">
 
-					<div ng-repeat="campaigns in campaign">
+				<!-- 	<div ng-repeat="campaigns in campaign">
 					<div class="col-md-6">
 						<h1 class="text-center"> Testeren </h1>
 						<textarea ng-model="campaignText.name" class="form-control" name="campaign" rows="6"></textarea>
 						<button class="btn btn-default text-center btnPadding pull-right"> Save </button>
 					</div>
-					</div>	
+					</div>	 -->
 
 					<div class="form-bottom">
 		                <form action='/api/campaigns', method='POST'>
 		                    <div class="form-group">
 		                       <input type="text" data-type="text" name="campaign" required/>
+
+		                      
+
+		                       	<textarea class="form-control" type="text" data-type="text" name="campaignTitle" rows="6" required></textarea>
 		                   </div>
 		                   
 			                <div class="row">
@@ -24,8 +28,21 @@
 			       </div>
 
 			       <div ng-repeat="campaign in campaigns">
-			       <button ng-if="campaign.campaign"> {{ campaign.campaign }} </button>
+			       <button ng-if="campaign.campaign" ng-click="campaignGet(campaign._id)"> {{ campaign.campaign }} </button>
+			       
 			       </div>
+
+
+					<textarea class="form-control" name="campaign" rows="6">{{campaign.campaign}} {{campaign.campaignTitle}}</textarea>
+
+					<div class="row">
+			               <input ng-click="campaignDelete(campaign._id)"  type="submit" value="Delete"> 
+			        </div>
+
+
+					 
+			       	
+
 				</div>
 			</div>
 		</div>

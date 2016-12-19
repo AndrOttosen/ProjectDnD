@@ -3,7 +3,7 @@
   "description": "Basic node server with express REST api",
   "main": "server.js",
   "authors": [
-    "Andreas Therkildsen"
+
   ],
   "license": "MIT",
   "homepage": "",

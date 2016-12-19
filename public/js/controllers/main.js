@@ -2,19 +2,47 @@
 
 angular.module('userCampaign', [])
 
-.controller('mainCtrl', function($scope, dataService){
-
+.controller('mainCtrl', function($scope, dataService, $http){
 	dataService.getCampaigns(function(response) {
 		var campaigns = response.data.campaign;
 		$scope.campaigns = campaigns;
 		console.log(response.data)
 	});	
+
+
+
+	$scope.campaignGet = function(campaignId) {
+		console.log(campaignId);
+		$http.get('/api/campaigns/' + campaignId).success(function (data) {
+        if (data.state == 'success') {
+          console.log('Loaded task');
+          $scope.campaign = data;
+        } else {
+          console.log(data);
+          $scope.campaign = data;
+        }
+      }).error(function (data) {
+        console.log(data);
+      });
+    };
+
+
+
+    $scope.campaignDelete = function(campaignId){
+
+    	console.log(campaignId)
+    	$http.delete('/api/campaigns/' + campaignId).then(function(response){
+    		console.log(response.data);
+    		}, function (response) {
+			console.log(response.data);
+			});
+
+    
+    }
+
+
+
 })
-
-
-
-
-
 
 
 
