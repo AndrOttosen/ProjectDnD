@@ -33,10 +33,14 @@
 			       </div>
 
 
-					<textarea class="form-control" name="campaign" rows="6">{{campaign.campaign}} {{campaign.campaignTitle}}</textarea>
+					<textarea class="form-control" name="campaign" rows="6">{{campaign.campaignTitle}}</textarea>
 
 					<div class="row">
 			               <input ng-click="campaignDelete(campaign._id)"  type="submit" value="Delete"> 
+			        </div>
+
+			        <div class="row">
+			               <input ng-click="campaignPut(campaign._id)"  type="submit" value="Update"> 
 			        </div>
 
 

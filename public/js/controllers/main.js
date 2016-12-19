@@ -26,7 +26,7 @@ angular.module('userCampaign', [])
       });
     };
 
-
+    // mean-stack er hvertfald sværererere end html. #truth
 
     $scope.campaignDelete = function(campaignId){
 
@@ -35,12 +35,19 @@ angular.module('userCampaign', [])
     		console.log(response.data);
     		}, function (response) {
 			console.log(response.data);
-			});
-
-    
+			});    
     }
 
+    $scope.campaignPut = function(campaignId) {
+  		console.log(campaignId)
+    	$http.put('/api/campaigns/' + campaignId, $scope.campaign).then(function(response){
+    		console.log(response.data);
+    		}, function (response) {
+			console.log(response.data);
+			});    
+      }
 
+      
 
 })
 
