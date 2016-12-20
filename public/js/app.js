@@ -29,7 +29,7 @@
   })
 
     .state('pastCampaigns', {
-    url: '/campaign-3',
+    url: '/pastCampaigns',
     templateUrl: 'views/pastCampaigns.html'
   })
 
@@ -44,14 +44,49 @@
     templateUrl: 'views/campaign.html'
   })
 
+  .state('planCampaign', {
+    url: '/planCampaign',
+    templateUrl: 'views/planCampaign.html'
+  })
+
+    .state('setupCampaign', {
+    url: '/setupCampaign',
+    templateUrl: 'views/setupCampaign.html'
+  })
+
+     .state('charactersInCampaign', {
+    url: '/charactersInCampaign',
+    templateUrl: 'views/charactersInCampaign.html'
+  })
+
+  .state('currentCampaigns', {
+    url: '/currentCampaigns',
+    templateUrl: 'views/currentCampaigns.html'
+  })
+
+  .state('yourScenes', {
+    url: '/yourScenes',
+    templateUrl: 'views/yourScenes.html'
+  })
+
+  .state('presetCampaigns', {
+    url: '/presetCampaigns',
+    templateUrl: 'views/presetCampaigns.html'
+  })
+
+    .state('inviteFriends', {
+    url: '/inviteFriends',
+    templateUrl: 'views/inviteFriends.html'
+  })
+
   .state('profile', {
     url: '/profile',
     templateUrl: 'views/profile.html'
   })
 
-  .state('currentCampaign', {
-    url: '/campaign-2',
-    templateUrl: 'views/currentCampaign.html'
+    .state('yourCharacters', {
+    url: '/yourCharacters',
+    templateUrl: 'views/yourCharacters.html'
   })
 
   .state ('creatercharacter', {
