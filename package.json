@@ -11,7 +11,7 @@
     "express": "^4.14.0",
     "express-session": "^1.14.0",
     "logger": "^0.0.1",
-    "mongodb": "^2.2.5",
+    "mongodb": "^2.2.15",
     "mongoose": "^4.5.8",
     "passport": "^0.3.2",
     "passport-http": "*",
