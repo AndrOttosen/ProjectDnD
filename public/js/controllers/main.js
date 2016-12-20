@@ -47,10 +47,17 @@ angular.module('userCampaign', [])
 			});    
       }
 
-      
+       $scope.saveCampaigns = function() {
+        var filteredcampaign = $scope.campaigns.filter(function(campaign){
+        if(campaign.edited) {
+        return camppaign
+        };
+      })
+       
+  };
 
 })
-
+  
 
 
 
