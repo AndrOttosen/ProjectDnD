@@ -5,7 +5,8 @@
  angular.module('angular', [
   'ui.router',
   'userCampaign',
-  'userCharacter'
+  'userCharacter',
+  'userAdd'
 ])
 
 .config(function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $locationProvider) {

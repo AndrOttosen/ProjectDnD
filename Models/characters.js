@@ -6,7 +6,11 @@ var characterSchema = new Schema({
     characterName: String,
     characterRace: String, 
     characterClass: String,
-    characterBackstory: String
+    characterBackstory: String,
+    user: String,
+    members: [String]
+
+
 });
 
 module.exports = mongoose.model('Character', characterSchema);
