@@ -1,13 +1,22 @@
 'use strict';
 
 angular.module('userCampaign', [])
+angular.module('userCharacter', [])
 
 .controller('mainCtrl', function($scope, dataService, $http){
 	dataService.getCampaigns(function(response) {
 		var campaigns = response.data.campaign;
 		$scope.campaigns = campaigns;
 		console.log(response.data)
+
 	});	
+
+  dataService2.getCharacters(function(response){
+    var characters = response.data.character;
+    $scope.characters = characters;
+    console.log(response.data)
+
+  });
 
 
 

@@ -4,7 +4,8 @@
 
  angular.module('angular', [
   'ui.router',
-  'userCampaign'
+  'userCampaign',
+  'userCharacter'
 ])
 
 .config(function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $locationProvider) {

@@ -4,7 +4,7 @@ angular.module('userCampaign')
 .service('dataService', function($http) {
   this.getCampaigns = function(cb) {
     $http.get('/api/campaigns').then(cb);
-};
+  }
 
   this.saveCampaign = function(campaign) {
       var queue = [];
@@ -30,5 +30,4 @@ angular.module('userCampaign')
   // };
 
 });
-
 

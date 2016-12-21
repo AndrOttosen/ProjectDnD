@@ -22,11 +22,13 @@ mongoose.connect('mongodb://localhost/'); // localhost
 //Models - Schemas for REST-API(Express)
 var User = require('./Models/users'); //require schema for users.
 var Campaign = require ('./Models/campaigns');
+var Character = require ('./Models/characters');
  
 //REST URLS aka. Routes
 var router = express.Router(); // 
 var userauths = require('./routes/userauths.js')(passport);
 var campaignpost = require('./routes/campaigns.js');
+var characterpost = require ('./routes/characters.js');
 var users = require('./routes/users.js')(passport);
 
 //tesetmanner
@@ -49,6 +51,7 @@ app.use(passport.session()); // req passport.session.
 
 app.use('/', userauths);
 app.use('/api', campaignpost);
+app.use('/app', characterpost);
  
 //Use a API tester, EG Postman - make a get request to localhost:3003/ to get a response
 app.get('/', function (req, res) { // Test af get funktion for at se om hul igennem. (req/res funktion)
@@ -129,17 +132,3 @@ console.log('We are live and hot on port ' + port);
 exports = module.exports = app; // Gør App tilgængelig i hele projektet. 
 
 
-// SUCCESS VERSION AF APP.GET TIL CAMPAIGNS
-// app.get('/campaigns', function (req, res) { // Get funktion af ALLE medlemmer.
-// var campaign = new campaignData();  
-// campaign.campaignName = req.body.campaign;
-
-//   campaignData.find(function (err, campaign) {
-//     if (err) {
-//       res.send(err);
-//     }
-//     res.json(campaign);
-
-//     console.log(campaignData);
-//   });
-// });
