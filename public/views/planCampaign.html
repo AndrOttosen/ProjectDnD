@@ -1,7 +1,7 @@
 <body>
 	<div class="container">
 
-		<div class="row">
+		<div class="row pushRow mediaPush">
 			<div class="text-center"><h1>Plan your campaign!</h1></div>
 
 			<div class="col-md-7 col-md-offset-3 text-center textContainer">Here you can <b>Plan your Campaign</b> which consist of setting up the campaign, adding characters to the campaign, adding your scenes and lastly ofcourse inviting your friends to join you on your adventure!
@@ -22,27 +22,49 @@
 
 		</div>
 
-		<div class="row"> 
-			<div class="text-center btnPadding ">
-				<a href="/#/setupCampaign"><button class="btn btn-default btnAdd">Setup Campaign</button></a>
+		<div class="row">
+			<div class="text-center btnPadding hidden-xs hidden-sm">
+				<a href="/#!/setupCampaign"><button class="btn btn-default btnAdd">Setup Campaign</button></a>
 			</div>
+
+			<!-- For Mobile -->
+			<div class="col-sm-2 hidden-md hidden-lg"></div>
+			<div class="text-center btnPadding col-sm-4 hidden-md hidden-lg">
+				<a href="/#!/setupCampaign"><button class="btn btn-default btnAdd">Setup Campaign</button></a>
+			<div class="text-center btnPadding col-sm-4 hidden-md hidden-lg">
+					<a href="/#!/charactersInCampaign"><button class="btn btn-default btnAdd">Characters in the campaign</button></a>
+			</div>
+			<div class="col-sm-2 hidden-md hidden-lg"></div>	
+			</div>
+			<!-- For Mobile Ends -->	
 		</div>
 			
 		<div class="row">
-			<div class="text-center btnPadding ">
-				<a href="/#/charactersInCampaign"><button class="btn btn-default btnAdd">Characters in the campaign</button></a>
+			<div class="text-center btnPadding hidden-xs hidden-sm">
+				<a href="/#!/charactersInCampaign"><button class="btn btn-default btnAdd">Characters in the campaign</button></a>
 			</div>	
 		</div>
 
 		<div class="row">
-			<div class="text-center btnPadding ">
-				<a href="/#/yourScenes"><button class="btn btn-default btnAdd">Your Scenes</button></a>
-			</div>	
+			<div class="text-center btnPadding hidden-xs hidden-sm">
+				<a href="/#!/yourScenes"><button class="btn btn-default btnAdd">Your Scenes</button></a>
+			</div>
+
+			<!-- For Mobile -->
+			<div class="col-sm-2 hidden-md hidden-lg"></div>
+			<div class="text-center btnPadding col-sm-4 hidden-md hidden-lg">
+				<a href="/#!/yourScenes"><button class="btn btn-default btnAdd">Your Scenes</button></a>
+			<div class="text-center btnPadding col-sm-4 hidden-md hidden-lg">
+				<a href="/#!/inviteFriends"><button class="btn btn-default btnAdd">Invite friends</button></a>
+			</div>
+			<div class="col-sm-2 hidden-md hidden-lg"></div>
+			</div>
+			<!-- For Mobile Ends -->		
 		</div>	
 
 		<div class="row">
-			<div class="text-center btnPadding ">
-				<a href="/#/inviteFriends"><button class="btn btn-default btnAdd">Invite friends</button></a>
+			<div class="text-center btnPadding hidden-xs hidden-sm">
+				<a href="/#!/inviteFriends"><button class="btn btn-default btnAdd">Invite friends</button></a>
 				</div>	
 		</div>		
 			
